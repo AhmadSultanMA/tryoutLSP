@@ -23,7 +23,7 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::post('/login', [LoginController::class, ('login')]);
+Route::post('/login', [LoginController::class, ('login')])->name('login');
 
 // Tampilan Admin
 Route::get('/admin', function () {
@@ -31,7 +31,7 @@ Route::get('/admin', function () {
 })->middleware('role:admin');
 
 // Artikel
-Route::get('/artikel', [ArtikelController::class, ('index')])->name('artikel');
+Route::get('/artikel', [ArtikelController::class, ('index')])->name('artikel')>middleware('role:admin');
 
 Route::get('/addArtikel', [ArtikelController::class, ('create')])->middleware('role:admin');
 
