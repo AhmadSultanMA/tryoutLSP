@@ -31,7 +31,7 @@ Route::get('/admin', function () {
 })->middleware('role:admin');
 
 // Artikel
-Route::get('/artikel', [ArtikelController::class, ('index')])->name('artikel')>middleware('role:admin');
+Route::get('/artikel', [ArtikelController::class, ('index')])->name('artikel')->middleware('role:admin');
 
 Route::get('/addArtikel', [ArtikelController::class, ('create')])->middleware('role:admin');
 

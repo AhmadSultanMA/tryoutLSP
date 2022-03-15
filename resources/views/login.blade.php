@@ -1,4 +1,4 @@
-@extends('auth/template')
+@extends('template')
 
 @section('content')
 <div class="container">
@@ -6,7 +6,6 @@
     <div class="col-md-7">
       <h3>Selamat Datang Di <strong>Baca Qu</strong></h3>
       <p class="mb-4">Membaca Bersama</p>
-      @include('message')
       <form action="/login" method="post" class="mb-3">
         @csrf
         <div class="form-group first">
